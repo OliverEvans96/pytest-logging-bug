@@ -4,7 +4,7 @@ pip install -r requirements.txt
 psql postgres -c 'create database test_db;'
 
 echo
-echo "This will work"
+echo "*** This will work ***"
 pytest
 
 echo

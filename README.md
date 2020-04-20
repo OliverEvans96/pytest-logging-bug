@@ -46,7 +46,7 @@ Requirement already satisfied: pyparsing>=2.0.2 in /home/oliver/local/miniconda3
 Requirement already satisfied: six in /home/oliver/local/miniconda3/envs/pytest-bug/lib/python3.7/site-packages (from packaging->pytest->-r requirements.txt (line 5)) (1.14.0)
 CREATE DATABASE
 
-This will work
+*** This will work ***
 ======================================= test session starts =======================================
 platform linux -- Python 3.7.7, pytest-5.4.1, py-1.8.1, pluggy-0.13.1
 rootdir: /home/oliver/code/python/pytest-logging-bug
