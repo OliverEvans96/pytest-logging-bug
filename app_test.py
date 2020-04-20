@@ -11,9 +11,6 @@ logging.basicConfig(level=logging.INFO)
 
 @pytest.fixture()
 def app_fixture():
-    '''
-    Create a Flask app context for the tests.
-    '''
     app.config['TESTING'] = True
 
     with app.app_context():
