@@ -1,0 +1,10 @@
+# Never want these
+.*.swp
+.#*
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Don't want to save migrations
+# for the sake of this test
+migrations/
