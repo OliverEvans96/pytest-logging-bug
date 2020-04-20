@@ -8,16 +8,17 @@ echo "This will work"
 pytest
 
 echo
-echo "This will not work"
+echo "*** This will not work ***"
 flask db init
 flask db migrate -m "Initial migration"
 export DO_UPGRADE='true'
 pytest
 
-echo "This won't work either"
+echo
+echo "*** This won't work either ***"
 pytest
 
 echo
-echo "This will work again"
+echo "*** This will work again ***"
 export DO_UPGRADE=''
 pytest
