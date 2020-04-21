@@ -1,3 +1,4 @@
+import concurrent.futures as cf
 import logging
 import os
 
@@ -22,7 +23,8 @@ def test_logging(app_fixture, caplog):
     logging.info(msg1)
 
     if os.getenv('DO_UPGRADE'):
-        flask_migrate.upgrade()
+        with cf.ProcessPoolExecutor() as pool:
+            pool.submit(flask_migrate.upgrade)
 
     msg2 = "After"
     logging.info(msg2)
