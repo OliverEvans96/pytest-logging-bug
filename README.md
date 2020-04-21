@@ -156,3 +156,7 @@ app_test.py .                                                                   
 
 ======================================== 1 passed in 0.21s ========================================
 ```
+
+# Update
+
+Based on @miguelgrinberg's advice in [Flask-Migrate#330](https://github.com/miguelgrinberg/Flask-Migrate/issues/330), the simplest solution is to run `flask_migrate.upgrade()` as a subprocess: [Solution diff](https://github.com/OliverEvans96/pytest-logging-bug/pull/1/files)
