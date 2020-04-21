@@ -159,4 +159,23 @@ app_test.py .                                                                   
 
 # Update
 
-Based on @miguelgrinberg's advice in [Flask-Migrate#330](https://github.com/miguelgrinberg/Flask-Migrate/issues/330), the simplest solution is to run `flask_migrate.upgrade()` as a subprocess: [Solution diff](https://github.com/OliverEvans96/pytest-logging-bug/pull/1/files)
+Based on @miguelgrinberg's advice in [Flask-Migrate#330](https://github.com/miguelgrinberg/Flask-Migrate/issues/330), the simplest solution is to run `flask_migrate.upgrade()` as a subprocess: [Solution PR](https://github.com/OliverEvans96/pytest-logging-bug/pull/1/files)
+
+app_test.py
+```diff
+@@ -1,3 +1,4 @@
++import concurrent.futures as cf
+ import logging
+ import os
+ 
+@@ -22,7 +23,8 @@ def test_logging(app_fixture, caplog):
+     logging.info(msg1)
+ 
+     if os.getenv('DO_UPGRADE'):
+-        flask_migrate.upgrade()
++        with cf.ProcessPoolExecutor() as pool:
++            pool.submit(flask_migrate.upgrade)
+ 
+     msg2 = "After"
+     logging.info(msg2)
+```
