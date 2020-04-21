@@ -159,7 +159,7 @@ app_test.py .                                                                   
 
 # Update
 
-Based on @miguelgrinberg's advice in [Flask-Migrate#330](https://github.com/miguelgrinberg/Flask-Migrate/issues/330), the simplest solution is to run `flask_migrate.upgrade()` as a subprocess: [Solution PR](https://github.com/OliverEvans96/pytest-logging-bug/pull/1/files)
+Based on @miguelgrinberg's advice in [Flask-Migrate#330](https://github.com/miguelgrinberg/Flask-Migrate/issues/330), the simplest solution is to run `flask_migrate.upgrade()` as a subprocess: [Solution PR](https://github.com/OliverEvans96/pytest-logging-bug/pull/1/files). All tests pass after this fix.
 
 app_test.py
 ```diff
